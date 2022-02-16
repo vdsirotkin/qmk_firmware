@@ -21,8 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x7983
-#define PRODUCT_ID      0x4C4C // "LL"
+#define VENDOR_ID       0x04D8
+#define PRODUCT_ID      0xEB2D // "LL"
 #define DEVICE_VER      0x0100
 #define MANUFACTURER    Keycapsss
 #define PRODUCT         Lily58L
