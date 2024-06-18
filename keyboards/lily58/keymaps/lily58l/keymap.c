@@ -220,18 +220,18 @@ void render_keylogger_status(void) {
 void render_default_layer_state(void) {
     oled_write_P(PSTR("Layer"), false);
     oled_write_P(PSTR(" "), false);
-    switch (get_highest_layer(layer_state)) {
+    switch (get_highest_layer(layer_state|default_layer_state)) {
         case _QWERTY:
-            oled_write_P(PSTR("QRTY"), false);
+            oled_write_ln_P(PSTR("0"), false);
             break;
         case _LOWER:
-            oled_write_ln_P(PSTR("LOW"), false);
+            oled_write_ln_P(PSTR("1"), false);
             break;
         case _RAISE:
-            oled_write_P(PSTR("HIGH"), false);
+            oled_write_ln_P(PSTR("2"), false);
             break;
         case _ADJUST:
-            oled_write_ln_P(PSTR("ADJ"), false);
+            oled_write_ln_P(PSTR("3"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undefined"), false);
@@ -259,16 +259,16 @@ void render_status_main(void) {
     // Show keyboard layout
     render_default_layer_state();
     // Add a empty line
-    oled_write_P(PSTR("-----"), false);
+//    oled_write_P(PSTR("-----"), false);
     // Show host keyboard led status
-    render_keylock_status(host_keyboard_led_state());
+//    render_keylock_status(host_keyboard_led_state());
     // Add a empty line
     oled_write_P(PSTR("-----"), false);
     // Show modifier status
     render_mod_status(get_mods());
     // Add a empty line
-    oled_write_P(PSTR("-----"), false);
-    render_keylogger_status();
+//    oled_write_P(PSTR("-----"), false);
+//    render_keylogger_status();
 }
 
 bool oled_task_user(void) {
